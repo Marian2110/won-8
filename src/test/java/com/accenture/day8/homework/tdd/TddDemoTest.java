@@ -1,4 +1,4 @@
-package com.accenture.day8.homework;
+package com.accenture.day8.homework.tdd;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
