@@ -12,9 +12,9 @@ public class PersonService {
                 .toList();
     }
 
-    public List<Person> getMajorPerson(List<Person> persons) {
+    public List<Person> getMajorPersons(List<Person> persons) {
         return persons.stream()
-                .filter(person -> person.age() > 18)
+                .filter(person -> person.age() >= 18)
                 .toList();
     }
 

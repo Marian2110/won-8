@@ -28,7 +28,7 @@ public class Main {
         personService.getPersonsHavingFirstNameStartingWithA(people).forEach(System.out::println);
 
         System.out.println("\nMajor people:");
-        personService.getMajorPerson(people).forEach(System.out::println);
+        personService.getMajorPersons(people).forEach(System.out::println);
 
         System.out.println("\nPeople having age between 18 and 60:");
         personService.getPersonsWithAgeBetween18And60(people).forEach(System.out::println);
