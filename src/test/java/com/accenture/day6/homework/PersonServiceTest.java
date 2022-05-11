@@ -1,6 +1,6 @@
 package com.accenture.day6.homework;
 
-import org.junit.jupiter.api.Assertions;
+import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -25,18 +25,20 @@ class PersonServiceTest {
 
     @Test
     void getPersonNames() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 "Andrei George",
                 "Claudiu Sagapao",
                 "Andrei Chiru" ,
                 "Andrei Chiru",
                 "Irina Belu"
         ), personService.getPersonNames(persons));
+
+
     }
 
     @Test
     void getMajorPersons() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Andrei", "George", 18, "Cluj"),
                 new Person("Claudiu", "Sagapao", 67, "Oradea"),
                 new Person("Irina", "Belu", 44, "Cluj")
@@ -46,14 +48,14 @@ class PersonServiceTest {
 
     @Test
     void getAllPersonFromOradea() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Claudiu", "Sagapao", 67, "Oradea")
         ), personService.getAllPersonFromOradea(persons));
     }
 
     @Test
     void getAllPersonFromOradeaOrCluj() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Andrei", "George", 18, "Cluj"),
                 new Person("Claudiu", "Sagapao", 67, "Oradea"),
                 new Person("Irina", "Belu", 44, "Cluj")
@@ -62,7 +64,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonFirstNameCapitalized() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 "ANDREI",
                 "CLAUDIU",
                 "ANDREI",
@@ -73,7 +75,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonFirstNameAndFirstLetterFormLastName() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 "Andrei G",
                 "Claudiu S",
                 "Andrei C",
@@ -84,7 +86,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonsWithAgeBetween18And60() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Irina", "Belu", 44, "Cluj")
         ), personService.getPersonsWithAgeBetween18And60(persons));
 
@@ -92,7 +94,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonsHavingFirstNameStartingWithA() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Andrei", "George", 18, "Cluj"),
                 new Person("Andrei", "Chiru", 15, "Bucuresti"),
                 new Person("Andrei", "Chiru", 13, "Bucuresti")
@@ -101,7 +103,7 @@ class PersonServiceTest {
 
     @Test
     void getAllUniqueFirstNames() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 "Andrei",
                 "Claudiu",
                 "Irina"
@@ -110,7 +112,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonsSortedByFirstName() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Andrei", "George", 18, "Cluj"),
                 new Person("Andrei", "Chiru", 15, "Bucuresti"),
                 new Person("Andrei", "Chiru", 13, "Bucuresti"),
@@ -121,7 +123,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonsSortedByLastName() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Irina", "Belu", 44, "Cluj"),
                 new Person("Andrei", "Chiru", 15, "Bucuresti"),
                 new Person("Andrei", "Chiru", 13, "Bucuresti"),
@@ -132,7 +134,7 @@ class PersonServiceTest {
 
     @Test
     void getPersonsSortedByFirstNameLastNameAndAge() {
-        Assertions.assertEquals(List.of(
+        assertEquals(List.of(
                 new Person("Andrei", "Chiru", 15, "Bucuresti"),
                 new Person("Andrei", "Chiru", 13, "Bucuresti"),
                 new Person("Andrei", "George", 18, "Cluj"),
