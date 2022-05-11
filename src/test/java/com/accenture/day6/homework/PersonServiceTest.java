@@ -1,7 +1,10 @@
 package com.accenture.day6.homework;
 
 import static org.junit.jupiter.api.Assertions.*;
+
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -37,6 +40,18 @@ class PersonServiceTest {
     }
 
     @Test
+    @DisplayName("Test for getPersonNames using AssertJ")
+    void givenListOfPersons_whenGettingPersonNames_thenReturnListOfStringsHavingFirstNameAndLastNameConcatenated() {
+        Assertions.assertThat(personService.getPersonNames(persons)).containsExactlyInAnyOrderElementsOf(List.of(
+                "Andrei George",
+                "Claudiu Sagapao",
+                "Andrei Chiru" ,
+                "Andrei Chiru",
+                "Irina Belu"
+        ));
+    }
+
+    @Test
     void getMajorPersons() {
         assertEquals(List.of(
                 new Person("Andrei", "George", 18, "Cluj"),
@@ -44,6 +59,15 @@ class PersonServiceTest {
                 new Person("Irina", "Belu", 44, "Cluj")
 
         ), personService.getMajorPersons(persons));
+    }
+
+    @Test
+    void givenListOfPersons_whenGettingMajorPersons_thenReturnListOfPersonsHavingAgeHigherThen17() {
+        Assertions.assertThat(personService.getMajorPersons(persons)).containsExactlyInAnyOrderElementsOf(List.of(
+                new Person("Andrei", "George", 18, "Cluj"),
+                new Person("Claudiu", "Sagapao", 67, "Oradea"),
+                new Person("Irina", "Belu", 44, "Cluj")
+        ));
     }
 
     @Test
