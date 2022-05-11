@@ -28,15 +28,17 @@ class PersonServiceTest {
 
     @Test
     void getPersonNames() {
-        assertEquals(List.of(
+        List<String> expected = List.of(
                 "Andrei George",
                 "Claudiu Sagapao",
-                "Andrei Chiru" ,
+                "Andrei Chiru",
                 "Andrei Chiru",
                 "Irina Belu"
-        ), personService.getPersonNames(persons));
+        );
 
+        List<String> actual = personService.getPersonNames(persons);
 
+        assertEquals(expected, actual);
     }
 
     @Test
@@ -45,7 +47,7 @@ class PersonServiceTest {
         Assertions.assertThat(personService.getPersonNames(persons)).containsExactlyInAnyOrderElementsOf(List.of(
                 "Andrei George",
                 "Claudiu Sagapao",
-                "Andrei Chiru" ,
+                "Andrei Chiru",
                 "Andrei Chiru",
                 "Irina Belu"
         ));
@@ -166,4 +168,7 @@ class PersonServiceTest {
                 new Person("Irina", "Belu", 44, "Cluj")
         ), personService.getPersonsSortedByFirstNameLastNameAndAge(persons));
     }
+
+
+
 }
