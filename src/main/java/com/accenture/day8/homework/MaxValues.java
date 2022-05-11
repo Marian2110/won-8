@@ -1,4 +1,4 @@
-package com.accenture.day6.homework;
+package com.accenture.day8.homework;
 
 public record MaxValues(int max, int secondMax) {
 }

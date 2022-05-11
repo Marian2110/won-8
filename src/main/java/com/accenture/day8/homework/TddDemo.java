@@ -1,10 +1,8 @@
-package com.accenture.day8.dsadsad;
-
-import com.accenture.day6.homework.MaxValues;
+package com.accenture.day8.homework;
 
 import java.util.List;
 
-public class TDD {
+public class TddDemo {
     public MaxValues max(List<Integer> list) {
         if (list != null && list.size() > 1) {
             int max = 0;

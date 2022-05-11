@@ -1,12 +1,12 @@
-package com.accenture.day6.homework;
+package com.accenture.day8.homework;
 
-import com.accenture.day8.dsadsad.TDD;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class TDDTest {
+class TddDemoTest {
 
     // Write a method "max" that gets as an input a list of Integers and returns the max two values.
     // If List is null return null
@@ -15,47 +15,46 @@ public class TDDTest {
 
     @Test
     void testIfClassExists() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
     }
 
     @Test
     void testMethodExistsWithProperParams() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         tdd.max(List.of(1, 2, 5, 7, 5));
     }
 
     @Test
     void testMethodHasProperReturnType() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         MaxValues values = tdd.max(List.of(1, 2, 5, 7, 3));
     }
 
     @Test
     void testNullReturnValueIfListIsNull() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         MaxValues values = tdd.max(null);
         Assertions.assertNull(values);
     }
 
     @Test
     void testNullReturnValueIfListHasOneElement() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         MaxValues values = tdd.max(List.of(1));
         Assertions.assertNull(values);
     }
 
 
-
     @Test
     void testReturnNotNullIfListSizeBiggerThenOne() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         MaxValues values = tdd.max(List.of(1, 2, 5, 7, 3));
         Assertions.assertNotNull(values);
     }
 
     @Test
     void testMaxIsCorrect() {
-        TDD tdd = new TDD();
+        TddDemo tdd = new TddDemo();
         MaxValues values = tdd.max(List.of(1, 2, 5, 7, 3));
 
         int expected = 7;
@@ -63,4 +62,13 @@ public class TDDTest {
         Assertions.assertEquals(expected, values.max());
     }
 
+    @Test
+    void testSecondMaxIsCorrect() {
+        TddDemo tdd = new TddDemo();
+        MaxValues values = tdd.max(List.of(1, 2, 5, 7, 3));
+
+        int expected = 5;
+        Assertions.assertNotNull(values);
+        Assertions.assertEquals(expected, values.secondMax());
+    }
 }
