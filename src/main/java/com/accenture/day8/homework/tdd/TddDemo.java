@@ -5,13 +5,13 @@ import java.util.List;
 public class TddDemo {
     public MaxValues max(List<Integer> list) {
         if (list != null && list.size() > 1) {
-            int max = 0;
-             int secondMax = 0;
-            for (  int item: list) {
+            int max = Integer.MIN_VALUE;
+            int secondMax = Integer.MIN_VALUE;
+            for (int item : list) {
                 if (item > max) {
                     secondMax = max;
                     max = item;
-                } else if (item > secondMax && item < max) {
+                } else if (item > secondMax) {
                     secondMax = item;
                 }
             }

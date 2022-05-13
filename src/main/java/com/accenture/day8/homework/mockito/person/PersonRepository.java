@@ -16,6 +16,7 @@ public class PersonRepository {
     public List<Person> findAll() {
         return List.copyOf(personList);
     }
+
     public List<Person> findByName(String name) {
         return findAll().stream().filter(person -> person.name().equals(name)).toList();
     }

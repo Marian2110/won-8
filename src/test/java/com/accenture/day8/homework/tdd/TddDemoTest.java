@@ -70,4 +70,13 @@ class TddDemoTest {
         Assertions.assertNotNull(values);
         Assertions.assertEquals(expected, values.secondMax());
     }
+    @Test
+    void testSecondMaxIsCorrect2() {
+        TddDemo tdd = new TddDemo();
+        MaxValues values = tdd.max(List.of(-1, -2, -5, -7, -3));
+
+        int expected = -2;
+        Assertions.assertNotNull(values);
+        Assertions.assertEquals(expected, values.secondMax());
+    }
 }

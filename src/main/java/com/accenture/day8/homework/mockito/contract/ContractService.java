@@ -14,7 +14,7 @@ public class ContractService {
 
     public boolean isEmployed(int personId) {
         if (personId < 0) {
-            throw new IllegalArgumentException("Person id should be greater then 0");
+            return false;
         }
         Optional<Contract> personContract = contractRepository.findByPersonId(personId);
 
